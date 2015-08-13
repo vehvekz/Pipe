@@ -44,7 +44,7 @@
 		left: 174px
 
 .tooltip
-	display: none
+	// display: none
 	position: absolute
 	top: -30px
 	left: 57px
@@ -53,6 +53,19 @@
 	border: 1px dashed $accentColor1
 	border-radius: 5px
 	background-color: rgba(0,0,0,.5)
+	&::before
+		content: ""
+		position: relative
+		display: block
+		top: 30px
+		left: -35px
+		border-top: 1px dashed $accentColor1
+		border-left: 1px dashed $accentColor1
+		border-bottom: 1px dashed $accentColor1
+		border-right: 3px solid rgba(0,0,0,1)
+		width: 25px
+		height: 30px
+
 	.tooltip-img
 		float: left
 		border-radius: 3px
@@ -73,16 +86,11 @@
 
 .point
 	position: relative
-	width: 22px
-	height: 35px
 	cursor: pointer
-	background:
-		image: url('../img/sprite.png')
-		repeat: no-repeat
 	&.-big
-		background-position: -370px -39px
+		+sprite($s-point-big)
 	&.-small
-		background-position: -394px -50px
+		+sprite($s-point-small)
 	&:hover .tooltip
 		display: block
 		transition: all .3s ease-in-out

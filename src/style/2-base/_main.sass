@@ -1,5 +1,5 @@
 .wrapper
-	// overflow: hidden
+	overflow: hidden
 	padding: 0
 	margin: 0 auto
 	font:
@@ -13,9 +13,10 @@
 	line-height: 1.42857
 	-webkit-font-smoothing: antialised
 
+// Sections title
 .section-title
 	margin: 0
-	padding: 50px 0
+	padding: 50px 0 60px
 	text-align: center
 	font:
 		size: 34px
@@ -24,4 +25,143 @@
 	color: $darkColor
 .-yellow
 	color: $accentColor1
+
+// Main Button
+.button
+	display: block
+	padding: 10px 44px
+	text-transform: uppercase
+	color: $darkColor
+	font:
+		size: 19px
+		weight: 700
+	text-shadow: 1px 1px rgba(255,255,255,.4)
+	border: 1px solid $accentBorder
+	border-bottom: 3px solid $accentBorderBottom
+	border-radius: 3px
+	background: #ffc033
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYzAzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjllMDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+)
+	background: -moz-linear-gradient(top, #ffc033 0%, #ff9e04 100%) /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc033), color-stop(100%,#ff9e04)) /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffc033 0%,#ff9e04 100%) /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffc033 0%,#ff9e04 100%) /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffc033 0%,#ff9e04 100%) /* IE10+ */
+	background: linear-gradient(to bottom, #ffc033 0%,#ff9e04 100%) /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc033', endColorstr='#ff9e04',GradientType=0 ) /* IE6-8 */
+	&.-small-font
+		font-size: 15px
+		padding: 10px 16px
+		margin-top: 10px
+
+// Main Form
+.form
+	position: relative
+	width: 400px
+	margin: 0 auto
+	padding: 28px 28px 45px
+	background-color: $headerBg
+	border-radius: 3px
+	text-align: center
+	&::after
+		content: ""
+		position: absolute
+		top: -126px
+		right: -183px
+		width: 454px
+		height: 456px
+		background: url('../img/tube_bg2.png') no-repeat 0 0
+		z-index: -10
+	.form_title
+		display: block
+		margin: 0 auto
+		width: 70%
+		text-transform: uppercase
+		color: $accentColor1
+		font:
+			size: 19px
+			weight: 700
+		line-height: 1
+		padding-bottom: 10px
+	.form_input
+		display: block
+		width: 100%
+		margin-top: 12px
+		padding: 5px 10px
+		color: $inputColor
+		font: 
+			size: 16px
+			weight: 700
+		&::-moz-placeholder
+			color: $inputColor
+		&::-webkit-input-placeholder
+			color: $inputColor
+	.-form-button
+		width: 320px
+		position: absolute
+		bottom: -25px
+		left: 50%
+		margin-left: -160px
+		z-index: 10
+
+	&.-cat-form, &.-sert-form
+		width: 100%
+		margin: 0
+		position: relative
+		bottom: -60px
+		&::after
+			display: none
+		.form_title
+			text-transform: none
+		.form_input
+			display: inline-block
+			width: 30%
+			margin-left: 20px
+			&:nth-child(2)
+				margin-left: 0px
+
+	&.-sert-form
+		background-color: $accentColor1
+		.form_title
+			color: $darkColor
+		.button
+			border: 1px solid $darkColor
+			background: $darkColor
+			color: $mainColor
+			text-shadow: none
+			font:
+				size: 15px
+			padding: 12px 44px
+
+// Slider navigations
+.slick-prev, 
+.slick-next
+	position: absolute
+	top: 50%
+	margin-top: -26px
+	background: none
+	border: none
+	z-index: 10
+	outline: none
+.slick-prev
+	left: 1px
+	+sprite($s-chevron-left)
+	&:hover
+		+sprite($s-chevron-left-active)
+.slick-next
+	right: 0px
+	+sprite($s-chevron-right)
+	&:hover
+		+sprite($s-chevron-right-active)
+
+.slick-prev.-black
+	top: 81px
+	margin-top: 0
+	&:hover
+		+sprite($s-chevron-left-black)
+.slick-next.-black
+	top: 81px
+	margin-top: 0
+	&:hover
+		+sprite($s-chevron-right-black)
+
 

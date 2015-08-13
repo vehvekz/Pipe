@@ -1,39 +1,22 @@
+mixin advantageItem (iconNum, title, discr)
+	.col-md-4.col-sm-6.col-xs-12
+		.advantage_item
+			.advantage-icon(class="#{iconNum}")
+			h4.advantage_title #{title}
+			p.advantage_discr #{discr}
+
 // begin advantage
 section.advantage
 	.container
 		.row
 			.col-md-12
 				h2.section-title Наши преимущества
-	.container
 		.row
-			.col-md-4.col-sm-6.col-xs-12
-				.advantage_item
-					.advantage-icon.-advantage-icon-1
-					h4.advantage_title Рассрочка
-					p.advantage_discr Мы предоставляем рассрочку платежа до 30 дней
-			.col-md-4.col-sm-6.col-xs-12
-				.advantage_item
-					.advantage-icon.-advantage-icon-2
-					h4.advantage_title Цена
-					p.advantage_discr Для каждого заказа найдем лучшую цену, исходя из требований
-			.col-md-4.col-sm-6.col-xs-12
-				.advantage_item
-					.advantage-icon.-advantage-icon-3
-					h4.advantage_title Сроки
-					p.advantage_discr Соблюдаем сроки поставки, указанные в договоре
-			.col-md-4.col-sm-6.col-xs-12
-				.advantage_item
-					.advantage-icon.-advantage-icon-4
-					h4.advantage_title Качество
-					p.advantage_discr Вся продукция высшего качества и сертифицированна
-			.col-md-4.col-sm-6.col-xs-12
-				.advantage_item
-					.advantage-icon.-advantage-icon-5
-					h4.advantage_title Детализация
-					p.advantage_discr Прорабатываем все проекты до мелочей. Ищем оптимальное решение
-			.col-md-4.col-sm-6.col-xs-12
-				.advantage_item
-					.advantage-icon.-advantage-icon-6
-					h4.advantage_title Индивидуальный подход
-					p.advantage_discr Каждый клиент дорог для нас, поэтому мы предлагаем не шаблонные решения
+			+advantageItem('-advantage-icon-1', 'Рассрочка', 'Мы предоставляем рассрочку платежа до 30 дней')
+			+advantageItem('-advantage-icon-2', 'Цена', 'Для каждого заказа найдем лучшую цену, исходя из требований')
+			+advantageItem('-advantage-icon-3', 'Сроки', 'Соблюдаем сроки поставки, указанные в договоре')
+			+advantageItem('-advantage-icon-4', 'Качество', 'Вся продукция высшего качества и сертифицированна')
+			+advantageItem('-advantage-icon-5', 'Детализация', 'Прорабатываем все проекты до мелочей. Ищем оптимальное решение')
+			+advantageItem('-advantage-icon-6', 'Индивидуальный подход', 'Каждый клиент дорог для нас, поэтому мы предлагаем не шаблонные решения')
+
 // end advantage

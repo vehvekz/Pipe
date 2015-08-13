@@ -7,13 +7,19 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-	
+
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	.tube {
 		padding-top: 30px;
+	}
+	.sferes-wrap {
+		text-align: center;
+	}
+	.advantage {
+		padding-bottom: 5px;
 	}
 }
 
@@ -38,10 +44,13 @@
 	.form::after {
 		display: none;
 	}
-	.-cat-form .form_input{
+	.form.-cat-form, 
+	.form.-sert-form {
+		.form_input{
 		display: block;
 		width: 100%;
 		margin-left: 0;
+		}
 	}
 	.map_pic {
 		height: 200px;
@@ -52,10 +61,10 @@
 @media only screen and (max-width : 320px) {
 	.form {
 		width: 290px;
-	}
-	.-form-button {
-		width: 260px;
-		margin-left: -130px;
+		.-form-button {
+			width: 260px;
+			margin-left: -130px;
+		}
 	}
 	.map_pic {
 		height: 150px;

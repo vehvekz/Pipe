@@ -1,0 +1,34 @@
+.clients
+	padding-top: 70px
+	position: relative
+	&::after
+		content: ""
+		position: absolute
+		top: 100%
+		left: 50%
+		margin-left: -800px
+		border-top: 800px solid transparent
+		border-right: 800px solid transparent
+		border-left: 800px solid transparent
+		border-top: 120px solid $mainColor
+		z-index: 10
+
+.clients-wrap
+	height: 174px
+	float: left
+.clients-slider
+	position: relative
+	overflow: hidden
+
+.clients-logo
+	margin: 0 auto
+	display: block
+.client-01
+	+sprite($s-company-01)
+.client-02
+	+sprite($s-company-02)
+.client-03
+	+sprite($s-company-03)
+.client-04
+	+sprite($s-company-04)
+

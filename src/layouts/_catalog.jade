@@ -1,3 +1,9 @@
+mixin catalogItem (pic, title)
+	.col-md-3.col-sm-4.col-xs-12
+		.catalog_item-wrap
+			img.catalog_pic(src="img/tube/tube#{pic}.jpg", alt="tube_products")
+			h4.catalog_title #{title}
+
 // begin catalog 
 section.catalog
 	.container
@@ -5,22 +11,11 @@ section.catalog
 			.col-md-12
 				h2.section-title.-black Каталог продукции
 		.row
-			.col-md-3.col-sm-4.col-xs-12
-				.catalog_item-wrap
-					img.catalog_pic(src="img/tube/tube1.jpg", alt="tube_products")
-					h4.catalog_title Трубы сварные
-			.col-md-3.col-sm-4.col-xs-12
-				.catalog_item-wrap
-					img.catalog_pic(src="img/tube/tube2.jpg", alt="tube_products")
-					h4.catalog_title Трубы бесшовные
-			.col-md-3.col-sm-4.col-xs-12
-				.catalog_item-wrap
-					img.catalog_pic(src="img/tube/tube3.jpg", alt="tube_products")
-					h4.catalog_title Трубы из цветных металлов
-			.col-md-3.col-sm-4.col-xs-12
-				.catalog_item-wrap
-					img.catalog_pic(src="img/tube/tube4.jpg", alt="tube_products")
-					h4.catalog_title Трубы по черчежам
+			+catalogItem(1, 'Трубы сварные')
+			+catalogItem(2, 'Трубы бесшовные')
+			+catalogItem(3, 'Трубы из цветных металлов')
+			+catalogItem(4, 'Трубы по черчежам')
+		
 		.row
 			.col-md-12
 				.form.-cat-form

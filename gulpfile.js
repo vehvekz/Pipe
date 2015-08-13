@@ -51,7 +51,7 @@ var config = {
 	server: {
 		baseDir: "./build"
 	},
-	tunnel: true,
+	tunnel: false,
 	host: 'localhost',
 	port: 9000,
 	logPrefix: "Frontend_work"
@@ -67,6 +67,10 @@ gulp.task('html:build', function () {
 	.pipe(gulp.dest(path.build.html)) 
 	.pipe(reload({stream: true})); 
 });
+
+// 
+// Build version for pruduction
+// 
 
 // JavaScript build
 gulp.task('js:build', function () {
@@ -84,7 +88,7 @@ gulp.task('js:build', function () {
 gulp.task('style:build', function () {
 	gulp.src(path.src.style)
 		.pipe(plumber())
-		// .pipe(sourcemaps.init())
+		.pipe(sourcemaps.init())
 		.pipe(sass({
 			indentedSyntax: true
 		}))
@@ -92,8 +96,8 @@ gulp.task('style:build', function () {
 			browsers: ['last 15 version', '> 1%', 'ie 8'],
 			cascade: true
 		}))
-		// .pipe(cssmin())
-		// .pipe(sourcemaps.write())
+		.pipe(cssmin())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}));
 });
@@ -102,6 +106,7 @@ gulp.task('style:build', function () {
 gulp.task('sprite:build', function() {
 	var spriteData = 
 		gulp.src(path.src.sprite) // путь, откуда берем картинки для спрайта
+			.pipe(plumber())
 			.pipe(spritesmith({
 				imgName: 'sprite00.png',
 				cssName: '_sprite.sass',
@@ -120,6 +125,7 @@ gulp.task('sprite:build', function() {
 // Image build
 gulp.task('image:build', function () {
 	gulp.src(path.src.img)
+		.pipe(plumber())
 		.pipe(imagemin({ 
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
@@ -133,6 +139,7 @@ gulp.task('image:build', function () {
 // Fonts build
 gulp.task('fonts:build', function() {
 	gulp.src(path.src.fonts)
+		.pipe(plumber())
 		.pipe(gulp.dest(path.build.fonts))
 });
 
@@ -140,10 +147,19 @@ gulp.task('fonts:build', function() {
 gulp.task('build', [
 	'html:build',
 	'js:build',
-	'style:build',
 	'fonts:build',
 	'sprite:build',
-	'image:build'
+	'image:build',
+	'style:build'
+]);
+
+// Developer
+gulp.task('dev', [
+	'html:build',
+	'js:build',
+	'fonts:build',
+	'sprite:build',
+	'style:build'
 ]);
 
 // watch task
@@ -167,5 +183,5 @@ gulp.task('clean', function (cb) {
 });
 
 // Default task
-gulp.task('default', ['clean', 'build', 'webserver', 'watch']);
+gulp.task('default', ['dev', 'webserver', 'watch']);
 

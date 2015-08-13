@@ -1,0 +1,20 @@
+mixin sferesItem(num, title)
+	.col-md-4.col-sm-6.col-xs-12.sferes-wrap
+		.sferes-item(class='#{num}')
+		.sferes-discr #{title}
+		
+// begin sferes 
+section.sferes
+	.container
+		.row
+			.col-md-12
+				h2.section-title.-yellow Сферы использования продукции
+		.row
+			+sferesItem('-sferes-01', 'Добыча нефти и газа')
+			+sferesItem('-sferes-02', 'Добыча полезных ископаемых')
+			+sferesItem('-sferes-03', 'Опасные производства')
+			+sferesItem('-sferes-04', 'Газо- и нефте хранение')
+			+sferesItem('-sferes-05', 'Нефте-переработка')
+			+sferesItem('-sferes-06', 'Переработка полезных ископаемых')
+		
+// end sferes 
