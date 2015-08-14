@@ -25,6 +25,10 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+	.section-title {
+	    padding: 30px 0px 40px;
+	    font-size: 30px;
+	}
 	.header_tel {
 		float: none;
 		text-align: center;
@@ -37,30 +41,60 @@
 		margin-left: 0px;
 		display: inline-block;
 	}
+	.tube_title {
+	    font-size: 40px;
+	}
+	.tube_discr {
+	    font-size: 25px;
+	}
 	.button.-small-font {
 		display: block;
 		margin: 10px auto 0;
+	}
+	.form {
+		width: 100%;
+		padding: 25px 5px 45px;
+		.form_title {
+			width: 95%;
+		}
+		&.-footer {
+			padding: 25px 0px;
+		}
 	}
 	.form::after {
 		display: none;
 	}
 	.form.-cat-form, 
 	.form.-sert-form {
+		bottom: 0;
 		.form_input{
 		display: block;
 		width: 100%;
 		margin-left: 0;
 		}
 	}
+	.footer-question--wrap {
+		padding: 30px 0px 10px;
+	}
 	.map_pic {
 		height: 200px;
+	}
+	.sertificates {
+		padding-top: 50px;
+	}
+	.advantage {
+	    padding-bottom: 15px;
+	}
+	.contact-wrap {
+		text-align: center;
+		margin-bottom: 20px;
 	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 	.form {
-		width: 290px;
+		width: 100%;
 		.-form-button {
 			width: 260px;
 			margin-left: -130px;
@@ -69,6 +103,13 @@
 	.map_pic {
 		height: 150px;
 	}
+	.footer-question {
+		font-size: 25px;
+		&.-yellow-big {
+			font-size: 40px;
+		}
+	}
+		
 }
 
 

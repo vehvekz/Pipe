@@ -42,29 +42,27 @@
 	&.-kazan
 		top: 120px
 		left: 174px
+	&.-novosibirsk
+		top: 320px
+		right: 380px
+	&.-norilsk
+		top: 150px
+		left: 294px
+	&.-yakutsk
+		top: 200px
+		right: 300px
 
 .tooltip
-	// display: none
+	display: none
 	position: absolute
-	top: -30px
-	left: 57px
+	z-index: 100
+	bottom: 14px
+	left: 28px
 	width: 400px
 	padding: 10px
 	border: 1px dashed $accentColor1
-	border-radius: 5px
+	border-radius: 30px 30px 30px 5px
 	background-color: rgba(0,0,0,.5)
-	&::before
-		content: ""
-		position: relative
-		display: block
-		top: 30px
-		left: -35px
-		border-top: 1px dashed $accentColor1
-		border-left: 1px dashed $accentColor1
-		border-bottom: 1px dashed $accentColor1
-		border-right: 3px solid rgba(0,0,0,1)
-		width: 25px
-		height: 30px
 
 	.tooltip-img
 		float: left

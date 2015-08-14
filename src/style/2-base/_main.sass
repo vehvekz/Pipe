@@ -7,11 +7,13 @@
 		weight: 400
 		size: 13px
 	color: $mainColor
-	min-width: 320px
+	min-width: 290px
 	max-width: 1600px
 	position: relative
 	line-height: 1.42857
 	-webkit-font-smoothing: antialised
+	a 
+		outline: none
 
 // Sections title
 .section-title
@@ -103,34 +105,52 @@
 		margin-left: -160px
 		z-index: 10
 
-	&.-cat-form, &.-sert-form
-		width: 100%
-		margin: 0
-		position: relative
-		bottom: -60px
-		&::after
-			display: none
-		.form_title
-			text-transform: none
-		.form_input
-			display: inline-block
-			width: 30%
-			margin-left: 20px
-			&:nth-child(2)
-				margin-left: 0px
+.-cat-form, .-sert-form
+	width: 100%
+	margin: 0
+	position: relative
+	bottom: -60px
+	&::after
+		display: none
+	.form_title
+		text-transform: none
+	.form_input
+		display: inline-block
+		width: 30%
+		margin-left: 20px
+		&:nth-child(2)
+			margin-left: 0px
 
-	&.-sert-form
-		background-color: $accentColor1
-		.form_title
-			color: $darkColor
-		.button
-			border: 1px solid $darkColor
-			background: $darkColor
-			color: $mainColor
-			text-shadow: none
-			font:
-				size: 15px
-			padding: 12px 44px
+.-sert-form
+	background-color: $accentColor1
+	.form_title
+		color: $darkColor
+	.button
+		border: 1px solid $darkColor
+		background: $darkColor
+		color: $mainColor
+		text-shadow: none
+		font:
+			size: 15px
+		padding: 12px 44px
+
+.-footer
+	width: 100%
+	padding: 25px 5px 20px
+	&::after
+		display: none
+	.form_title
+		width: 80%
+	.form_input
+		margin-top: 10px
+		padding: 2px 7px
+	.-footer-button
+		width: 150px
+		margin: 0 auto
+		padding: 5px 12px
+		font-size: 12px
+		margin-top: 20px
+
 
 // Slider navigations
 .slick-prev, 
